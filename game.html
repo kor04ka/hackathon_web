@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<meta name="robots" content="noindex">
+<title>Мини-игра</title>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Настольная игра</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style type="text/css">
+
+		.boxs {
+			height: 100px;
+			width: 100px;
+			background-color: green;
+			border: solid;
+			position: absolute;
+		}
+		.firsBox {
+			background-color: white;
+			background-image:url(https://www.dropbox.com/s/yjra5eitixt8w4r/duckl.png?raw=1)
+		}
+
+	</style>
+</head>
+<body>
+<button class="obratno btn col-1 font-weight-bold text-white" style="background:orangered;height:50px;">На главную</button>
+<div class="first col-4  mx-auto border" style="height:300px;transition:1s;display:none;">
+	<h1>Что надо одевать при выходе из дома?</h1>
+	<p class="hat border-bottom font-weight-bold">1) Шапка</p>
+	<p class="sharf border-bottom font-weight-bold">1) Шарф</p>
+	<p class="mask border-bottom font-weight-bold">1) Маска</p>
+
+</div>
+
+
+
+
+<div class="second col-4  mx-auto border" style="height:300px;transition:1s;display:none;">
+	<h1>Как часто менять маску?</h1>
+	<p class="sutka border-bottom font-weight-bold">1) Раз в сутки</p>
+	<p class="pyatnadsat border-bottom font-weight-bold">1) Каждые 15 минут</p>
+	<p class="dvachasa border-bottom font-weight-bold">1) Каждые 2 часа</p>
+
+</div>
+
+
+
+
+<div class="third col-4  mx-auto border" style="height:300px;transition:1s;display:none;">
+	<h1>Можно ли посещать магазины?</h1>
+	<p class="only_product border-bottom font-weight-bold">1) Можно, но лишь продуктовые</p>
+	<p class="vse border-bottom font-weight-bold">1) Любые, если они открыты</p>
+	<p class="nelzya border-bottom font-weight-bold">1) Нет, нельзя</p>
+
+</div>
+
+
+
+<div class="four col-4  mx-auto border" style="height:300px;transition:1s;display:none;">
+	<h1>Можно ли посещать аптеки?</h1>
+	<p class="vishe_shans border-bottom font-weight-bold">1) Нельзя, в них выше шанс заразиться</p>
+	<p class="mozhno border-bottom font-weight-bold">1) Можно</p>
+	<p class="vlasti border-bottom font-weight-bold">1) Если власти требуют это делать</p>
+
+</div>
+
+
+
+<div class="five col-4  mx-auto border" style="height:300px;transition:1s;display:none;">
+	<h1>Чем нужно мыть руки?</h1>
+	<p class="milo border-bottom font-weight-bold">1) Мылом или спиртосодержащим средством</p>
+	<p class="iod border-bottom font-weight-bold">1) Йодом</p>
+	<p class="voda border-bottom font-weight-bold">1) Обычной водой</p>
+
+</div>
+
+
+
+<div class="six col-4  mx-auto border" style="height:300px;transition:1s;display:none;">
+	<h1>На каком расстоянии лучше держаться от людей?</h1>
+	<p class="net_straha border-bottom font-weight-bold">1) Надел маску - не боишься ничего</p>
+	<p class="metr border-bottom font-weight-bold">1) Как минимум 1 метр</p>
+	<p class="izbegat border-bottom font-weight-bold">1) Полностью избегать</p>
+
+</div>
+
+
+
+<div class="seven col-4  mx-auto border" style="height:300px;transition:1s;display:none;">
+	<h1>Что делать при повышении температуры?</h1>
+	<p class="panic border-bottom font-weight-bold">1) Паниковать</p>
+	<p class="vrach border-bottom font-weight-bold">1) Вызов врача</p>
+	<p class="sam border-bottom font-weight-bold">1) Принять жаропонижающее и посадить себя на карантин самостоятельно</p>
+
+</div>
+
+
+<div class="eight col-4  mx-auto border" style="height:300px;transition:1s;display:none;">
+	<h1>Какому источнику информации нужно доверять?</h1>
+	<p class="znakomi border-bottom font-weight-bold">1) Знакомым знакомых, которые услышали из ДОСТОВЕРНОГО источника</p>
+	<p class="official border-bottom font-weight-bold">1) Официальным сайтам</p>
+	<p class="socset border-bottom font-weight-bold">1) Социальным сетям</p>
+
+</div>
+<div class="content">
+<h4 style="margin-left: 20px">Score: <span class="score">150</span></h4>
+<div class="col-2 mx-auto">
+	<button class="first btn col-4 btn-primary" style="height:50px;font-size:15px;display:none;">Перейти к вопросу</button>
+	<button class="second btn col-4 btn-primary" style="height:50px;font-size:15px;display:none;">Перейти к вопросу</button>
+	<button class="third btn col-4 btn-primary" style="height:50px;font-size:15px;display:none;">Перейти к вопросу</button>
+	<button class="four btn col-4 btn-primary" style="height:50px;font-size:15px;display:none;">Перейти к вопросу</button>
+	<button class="five col-4 btn-primary" style="height:50px;font-size:15px;display:none;">Перейти к вопросу</button>
+	<button class="six btn col-4 btn-primary" style="height:50px;font-size:15px;display:none;">Перейти к вопросу</button>
+	<button class="seven btn col-4 btn-primary" style="height:50px;font-size:15px;display:none;">Перейти к вопросу</button>
+	<button class="eight btn col-4 btn-primary" style="height:50px;font-size:15px;display:none;">Перейти к вопросу</button>
+</div>
+<img src="https://www.dropbox.com/s/gewt6jexentw3qw/dice.png?raw=1" class="bt" style="width: 100px; margin-left: 20px">
+<div class="boxs firsBox" style="margin-left: 20px">
+<h4>finish</h4>
+</div>
+<div class="boxs" style="margin-left: 130px">1</div>
+<div class="boxs" style="margin-left: 240px">2</div>
+<div class="boxs" style="margin-left: 350px; background-color: red">3</div>
+<div class="boxs" style="margin-left: 460px">4</div>
+<div class="boxs" style="margin-left: 570px">5</div>
+<div class="boxs" style="margin-left: 680px;  background-color: red">6</div>
+<div class="boxs" style="margin-left: 790px">7</div>
+<div class="boxs" style="margin-left: 900px">8</div>
+<div class="boxs" style="margin-left: 1010px;background-color: red">9</div>
+<div class="boxs" style="margin-left: 1120px">10</div>
+<div class="boxs" style="margin-left: 1230px">11</div>
+<div class="boxs" style="margin-left: 1340px;background-color: red">12
+</div>
+<div class="boxs" style="margin-left: 1340px; margin-top: 110px">13</div>
+<div class="boxs" style="margin-left: 1340px; margin-top: 220px">14</div>
+<div class="boxs" style="margin-left: 1340px; margin-top: 330px;background-color: red">15</div>
+<div class="boxs" style="margin-left: 1340px; margin-top: 440px">16</div>
+<div class="boxs" style="margin-left: 1230px; margin-top: 440px">17</div>
+<div class="boxs" style="margin-left: 1120px; margin-top: 440px">18</div>
+<div class="boxs" style="margin-left: 1010px; margin-top: 440px">19</div>
+<div class="boxs" style="margin-left: 900px; margin-top: 440px;background-color: red">20</div>
+<div class="boxs" style="margin-left: 790px; margin-top: 440px">21</div>
+<div class="boxs" style="margin-left: 680px; margin-top: 440px">22</div>
+<div class="boxs" style="margin-left: 570px; margin-top: 440px">23</div>
+<div class="boxs" style="margin-left: 460px; margin-top: 440px">24</div>
+<div class="boxs" style="margin-left: 350px; margin-top: 440px;background-color: red">25</div>
+<div class="boxs" style="margin-left: 240px; margin-top: 440px">26</div>
+<div class="boxs" style="margin-left: 130px; margin-top: 440px">27</div>
+<div class="boxs" style="margin-left: 20px; margin-top: 440px">28</div>
+<div class="boxs" style="margin-left: 20px; margin-top: 330px">29</div>
+<div class="boxs" style="margin-left: 20px; margin-top: 220px;background-color: red">30</div> 
+<div class="boxs" style="margin-left: 20px; margin-top: 110px">31</div>
+
+<div class="boxs" style="margin-left: 130px; margin-top: 110px; background-color: green; opacity: 0"></div>
+<div class="boxs" style="margin-left: 240px; margin-top: 110px; background-color: green; opacity: 0"></div>
+<div class="boxs" style="margin-left: 350px; margin-top: 110px; background-color: green; opacity: 0"></div>
+<div class="boxs" style="margin-left: 460px; margin-top: 110px; background-color: green; opacity: 0"></div>
+<div class="boxs" style="margin-left: 570px; margin-top: 110px; background-color: green; opacity: 0"></div>
+<div class="boxs" style="margin-left: 680px; margin-top: 110px; background-color: green; opacity: 0"></div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	let obratno = document.querySelector(".obratno")
+	let duck = document.querySelector(".duck");
+	let button = document.querySelector(".bt");
+	let score = document.querySelector(".score");
+	let point = 150;
+	let boxes = document.querySelectorAll(".boxs");
+ 	let shag = 0;
+ 	let hat = document.querySelector(".hat")
+ 	let sharf = document.querySelector(".sharf")
+ 	let mask = document.querySelector(".mask")
+ 	let sutka = document.querySelector(".sutka")
+ 	let pyatnadsat = document.querySelector(".pyatnadsat")
+ 	let dvachasa = document.querySelector(".dvachasa")
+ 	let only_product = document.querySelector(".only_product")
+ 	let vse = document.querySelector(".vse")
+ 	let nelzya = document.querySelector(".nelzya")
+ 	let vishe_shans = document.querySelector(".vishe_shans")
+ 	let mozhno = document.querySelector(".mozhno")
+ 	let vlasti = document.querySelector(".vlasti")
+ 	let milo = document.querySelector(".milo")
+ 	let iod = document.querySelector(".iod")
+ 	let voda = document.querySelector(".voda")
+ 	let net_straha = document.querySelector(".net_straha")
+ 	let metr = document.querySelector(".metr")
+ 	let izbegat = document.querySelector(".izbegat")
+ 	let panic = document.querySelector(".panic")
+ 	let vrach = document.querySelector(".vrach")
+ 	let sam = document.querySelector(".sam")
+ 	let znakomi = document.querySelector(".znakomi")
+ 	let official = document.querySelector(".official")
+ 	let socset = document.querySelector(".socset")
+ 	let first = document.querySelector(".first")
+ 	let second = document.querySelector(".second")
+ 	let third = document.querySelector(".third")
+ 	let four = document.querySelector(".four")
+ 	let five = document.querySelector(".five")
+ 	let six = document.querySelector(".six")
+ 	let seven = document.querySelector(".seven")
+ 	let eight = document.querySelector(".eight")
+ 	obratno.onclick = function(){
+ 		location.href = "main.html"
+ 	}
+	let scoreController = function(arg) {
+		point = point + arg;
+		score.innerHTML = point;
+	}
+
+	let winMode = function(){
+		content = document.querySelector('.content');
+		winMode = content.style.display = "none";
+		return 'you win';		
+	}
+
+	button.onclick = function(){
+
+		boxes[shag].style.backgroundImage = 'none';
+		let rand = Math.round(Math.random() * 6)
+		
+		shag = shag + rand // СЃРЅР°С‡Р°Р»Р° С‚СѓРїРѕ РґРѕР±Р°РІРёС‚СЊ + 1 
+
+		alert('иди на ' + rand + ' на клетку ' + shag)			
+
+		boxes[shag].style.backgroundImage = 'url(https://www.dropbox.com/s/yjra5eitixt8w4r/duckl.png?raw=1)';
+
+		if (rand==0) {
+			scoreController(0); //СЃС‚РѕР»РєРЅСѓС‚СЃСЏ СЃ РїСЂРѕР±Р»РµРјРѕР№
+		} else {
+			scoreController(10);
+		}
+		
+		if (shag>31) {
+			let win = winMode();
+			alert(win) 
+		} 
+
+
+		if (shag==3) {
+			alert("Вопрос!");	
+			first.style.display = "block"
+			boxes[shag].style.backgroundImage = 'url(https://www.dropbox.com/s/yjra5eitixt8w4r/duckl.png?raw=1)';
+			
+		}
+		if (shag==6) {
+			alert("Вопрос!");
+			second.style.display="block"	
+			boxes[shag].style.backgroundImage = 'url(https://www.dropbox.com/s/yjra5eitixt8w4r/duckl.png?raw=1)';
+			
+		}
+		if (shag==9) {
+			alert("Вопрос!");
+			third.style.display="block"	
+			boxes[shag].style.backgroundImage = 'url(https://www.dropbox.com/s/yjra5eitixt8w4r/duckl.png?raw=1)';
+			
+		}
+		if (shag==12) {
+			alert("Вопрос!");
+			four.style.display="block"	
+			boxes[shag].style.backgroundImage = 'url(https://www.dropbox.com/s/yjra5eitixt8w4r/duckl.png?raw=1)';
+			
+		}
+		if (shag==15) {
+			alert("Вопрос!");
+			five.style.display="block"		
+			boxes[shag].style.backgroundImage = 'url(https://www.dropbox.com/s/yjra5eitixt8w4r/duckl.png?raw=1)';
+			
+		}
+		if (shag==20) {
+			alert("Вопрос!");
+			six.style.display="block"	
+			boxes[shag].style.backgroundImage = 'url(https://www.dropbox.com/s/yjra5eitixt8w4r/duckl.png?raw=1)';
+			
+		}
+		if (shag==25) {
+			alert("Вопрос!");
+			seven.style.display="block"	
+			boxes[shag].style.backgroundImage = 'url(https://www.dropbox.com/s/yjra5eitixt8w4r/duckl.png?raw=1)';
+			
+		}
+		if (shag==30) {
+			alert("Вопрос!");
+			eight.style.display="block"	
+			boxes[shag].style.backgroundImage = 'url(https://www.dropbox.com/s/yjra5eitixt8w4r/duckl.png?raw=1)';
+			
+		}
+	
+	}
+	mask.onclick = function(){
+		alert("Верно")
+		first.style.display="none"
+		shag=shag+1
+	}
+	hat.onclick = function(){
+		alert("Неверно")
+	}
+	sharf.onclick = function(){
+		alert("Неверно")
+	}
+	dvachasa.onclick = function(){
+		alert("Верно")
+		second.style.display = "none"
+	}
+	pyatnadsat.onclick = function(){
+		alert("Неверно")
+	}
+	sutka.onclick = function(){
+		alert("Неверно")
+	}
+	only_product.onclick = function(){
+		alert("Верно")
+		third.style.display = "none"
+	}
+	vse.onclick = function(){
+		alert("Неверно")
+	}
+	nelzya.onclick = function(){
+		alert("Неверно")
+	}
+	mozhno.onclick = function(){
+		alert("Верно")
+		four.style.display = "none"
+	}
+	vishe_shans.onclick = function(){
+		alert("Неверно")
+	}
+	vlasti.onclick = function(){
+		alert("Неверно")
+	}
+	milo.onclick = function(){
+		alert("Верно")
+		five.style.display="none"
+	}
+	iod.onclick = function(){
+		alert("Неверно")
+	}
+	voda.onclick = function(){
+		alert("Неверно")
+	}
+	metr.onclick = function(){
+		alert("Верно")
+		six.style.display="none"
+	}
+	net_straha.onclick = function(){
+		alert("Неверно")
+	}
+	izbegat.onclick = function(){
+		alert("Неверно")
+	}
+	vrach.onclick = function(){
+		alert("Верно")
+		seven.style.display="none"
+	}
+	sam.onclick = function(){
+		alert("Неверно")
+	}
+	panic.onclick = function(){
+		alert("Неверно")
+	}
+	official.onclick = function(){
+		alert("Верно")
+		eight.style.display="none"
+	}
+	socset.onclick = function(){
+		alert("Неверно")
+	}
+	znakomi.onclick = function(){
+		alert("Неверно")
+	}
+
+</script>
+</body>
+</html>

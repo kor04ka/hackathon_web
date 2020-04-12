@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Что предпринять?</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="html.css">
+	<link rel="stylesheet" href="html.js">
+	<style>
+		p {
+			font-size: 25px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header" style="background-color: white">
+		<div class="col-10 border-bottom mx-auto headertitle" style="padding: 10px; font-size: 30px;">COVID-19</div>
+		<div class="col-10 row mx-auto" style="padding: 10px; padding-bottom: 5px; margin-top: 7px;">
+			<div class="col-5 row" style="">
+				<a href="allabout.html" class="mr-auto" style="text-decoration: none" class="link">Всё о коронавирусе</a>
+				<a href="borba.html" class="mr-auto" style="text-decoration: none" class="link">Что предпринять</a>
+				<a href="fun.html" class="mr-auto" style="text-decoration: none" class="link">Чем заняться</a>
+			</div>
+			<div class="col-7 row">
+				<p class="ml-auto" style="font-size: 16px" class="link">Единая горячая линия: <span class="text-danger">8-800-2000-112</span></p>
+			</div>
+		</div>
+	</div>
+	<div class="col-10 mx-auto main">
+		<div class="col-8">
+			<h1 class="font-weight-bold title" style="margin-top: 0px">Что предпринять, чтобы не заразиться?</h1>
+		</div>
+		<!--оставаться дома-->
+		<div class="col-8">
+			<h1 class="font-weight-bold title" style="margin-top: 50px">Первым делом, это конечно же оставаться <span class="" style="color: orangered">дома</span></h1>
+		</div>
+		<p>Выходить из дома надо только если надо выбросить мусор, выйти в магазин или тому подобное, тоесть только по самым неотложным делам. Избегайте контактов с другими людьми, не надо передвигаться по городу на общественных транспортах, лучше передвигайтесь конечно же личным транспортом, а если у вас его нету, то на такси.</p>
+		<h3>Дальнейшее распространение инфекции и перспективы всей страны во многом сейчас зависят от нас. Нужно просто соблюдать режим самоизоляции.</h3>
+		<!--гигиена-->
+		<div class="col-8">
+			<h1 class="font-weight-bold title" style="margin-top: 50px">Правила <span class="" style="color: orangered">соблюдения гигиены</span></h1>
+		</div>
+		<div class="border-left border-secondary pl-5 p-3 pb-1">
+			<p>Мойте руки с мылом и используйте антисептик</p>
+			<p>Не касайтесь рта, носа и глаз грязными руками</p>
+			<p>Носите маски на улице и меняйте их каждые 2-3 часа</p>
+			<p>Обеззараживайте ваши телефоны, чехлы на них, мышки, клавиатуры</p>
+			<p>Кашляйте в локоть</p>
+			<p>Мойте посуду после каждого приёма пищи</p>
+			<p>Проветривайте помещение</p>
+			<p>Избегайте контактов с людьми</p>
+			<p>Мыть купленные фрукты и овощи</p>
+		</div>
+		<div class="col-8">
+			<h1 class="title fun font-weight-bolder" style="cursor: pointer">Если уж слишком скучно...</h1>
+		</div>
+	</div>
+
+	<div class="col-12 bg-secondary footer" style="padding: 20px; margin-top: 30px;">
+		<div class="col-3" style="margin-left: auto; color: white">
+			<h2 class="num">Единая горячая линия:</h2>
+			<h1>8-800-2000-112</h1>
+		</div>
+	</div>
+	<script>
+		let header = document.querySelector(".header")
+		let fun = document.querySelector(".fun")
+		header.onclick = function() {
+			let hreffade = function() {
+				main.style.opacity = 0
+			}
+			let href = function() {
+				location.href = "main.html"
+			}
+			setTimeout(hreffade, 0)
+			setTimeout(href, 500)
+		}
+		let main = document.querySelector(".main")
+		let mainfade = function() {
+			main.style.display = "block"
+			main.style.opacity = 0
+			document.querySelector(".footer").style.display = "biock"
+			document.querySelector(".footer").style.opacity = 0
+		}
+		let mainfadee = function() {
+			main.style.opacity = 100
+			document.querySelector(".footer").style.opacity = 100
+		}
+		setTimeout(mainfade, 0)
+		setTimeout(mainfadee, 500)
+		fun.onclick = function() {
+			let hreffade = function() {
+				main.style.opacity = 0
+			}
+			let href = function() {
+				location.href = "fun.html"
+			}
+			setTimeout(hreffade, 0)
+			setTimeout(href, 500)
+		}
+	</script>
+</body></html>

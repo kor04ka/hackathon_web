@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тест</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="html.css">
+</head>
+
+<body>
+	<div class="header" style="background-color: white">
+		<div class="col-10 border-bottom mx-auto headertitle" style="padding: 10px; font-size: 30px;">COVID-19</div>
+		<div class="col-10 row mx-auto" style="padding: 10px; padding-bottom: 5px; margin-top: 7px;">
+			<div class="col-5 row" style="">
+				<a href="allabout.html" class="mr-auto" style="text-decoration: none" class="link">Всё о коронавирусе</a>
+				<a href="borba.html" class="mr-auto" style="text-decoration: none" class="link">Что предпринять</a>
+				<a href="fun.html" class="mr-auto" style="text-decoration: none" class="link">Чем заняться</a>
+			</div>
+			<div class="col-7 row">
+				<p class="ml-auto" style="font-size: 16px" class="link">Единая горячая линия: <span class="text-danger">8-800-2000-112</span></p>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="first col-6 mx-auto mt-3">
+			<img src="pictures/1.jpg" class="w-100" style="height: 500px;">
+			<h1 class="text-center font-weight-bolder">Какие из этих симптомов коронавируса основные?</h1>
+		</div>
+		<div class="questions_1 col-6 mx-auto mt-5 pl-0 pr-0" style="height:px;">
+			<div class="simptomi_osnova col-12 rounded" style="height:px;">
+				<p class="answer_1 font-weight-bold">высокая температура тела, кашель (сухой или с небольшим количеством мокроты), одышка, боль в мышцах, усталость</p>
+			</div>
+			<div class="simptomi_redkie col-12 rounded mt-3" style="height:px;">
+				<p class="answer_2 font-weight-bold">головная боль, заложенность грудной клетки, кровохарканье, диарея, тошнота, рвота</p>
+			</div>
+			<div class="col-12 border border-success rounded mt-3" style="height:px; display:none;"></div>
+		</div>
+
+
+		<div class="second col-6  mx-auto mt-3" style="display:none;">
+			<img src="pictures/2.jpg" class="w-100" style="height: 500px;">
+			<h1 class="text-center font-weight-bolder">Что делать если появились симптомы?</h1>
+		</div>
+		<div class="questions_2 col-6 mx-auto mt-5 pl-0 pr-0" style="height:200px; display: none;">
+			<div class="poliklinika col-12 rounded" style="height:px;">
+				<p class="2_answer_1 font-weight-bold">идти в поликлинику</p>
+			</div>
+			<div class="vrach col-12 rounded mt-3" style="height:px;">
+				<p class="2_answer_2 font-weight-bold">вызвать врача</p>
+			</div>
+			<div class="samomu col-12 rounded mt-3" style="height:px;display: none;">
+				<p class="2_answer_3 font-weight-bold">лечить самому</p>
+			</div>
+		</div>
+
+
+		<div class="third col-6  mx-auto mt-3 pl-0 pr-0" style="display:none;">
+			<img src="pictures/3.jpg" class="w-100" style="height: 500px;">
+			<h1 class="text-center font-weight-bolder">Какой из этих советов неправильный?</h1>
+		</div>
+		<div class="questions_3 col-6 mx-auto mt-5 pl-0 pr-0" style="display:none;">
+			<div class=" col-12 rounded" style="height:px;">
+				<p class="eda font-weight-bold">не ешьте еду (орешки, чипсы, печенье и другие снеки) из общих упаковок или посуды, если другие люди погружали в них свои пальцы</p>
+			</div>
+			<div class=" col-12 rounded mt-3" style="height:px;">
+				<p class="priveti font-weight-bold">приветствуйте друг друга рукопожатием</p>
+			</div>
+			<div class=" col-12 rounded mt-3" style="height:px;">
+				<p class="vihod font-weight-bold">выходите из дома только по самым неотложным делам – в ближайший магазин или аптеку, для выноса мусора или выгула домашних животных</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let header = document.querySelector(".header")
+		let simptomi_1 = document.querySelector(".answer_1")
+		let simptomi_2 = document.querySelector(".answer_2")
+		let poliklinika = document.querySelector(".poliklinika")
+		let vrach = document.querySelector(".vrach")
+		let samomu = document.querySelector(".samomu")
+		let eda = document.querySelector(".eda")
+		let priveti = document.querySelector(".priveti")
+		let vihod = document.querySelector(".vihod")
+		let main = document.querySelector(".main")
+		let miss = 0
+		let mainfade = function() {
+			main.style.display = "block"
+			main.style.opacity = 0
+		}
+		let mainfadee = function() {
+			main.style.opacity = 100
+		}
+		setTimeout(mainfade, 0)
+		setTimeout(mainfadee, 500)
+		header.onclick = function() {
+			let hreffade = function() {
+				main.style.opacity = 0
+			}
+			let href = function() {
+				location.href = "main.html"
+			}
+			setTimeout(hreffade, 0)
+			setTimeout(href, 500)
+		}
+		simptomi_1.onclick = function() {
+			document.querySelector(".first").style.display = "none"
+			document.querySelector(".questions_1").style.display = "none"
+			document.querySelector(".second").style.display = "block"
+			document.querySelector(".questions_2").style.display = "block"
+			samomu.style.display = "block"
+		}
+		simptomi_2.onclick = function() {
+			alert("Неправильно!")
+			miss=miss+1
+		}
+		vrach.onclick = function() {
+			document.querySelector(".second").style.display = "none"
+			document.querySelector(".questions_2").style.display = "none"
+			document.querySelector(".third").style.display = "block"
+			document.querySelector(".questions_3").style.display = "block"
+		}
+		poliklinika.onclick = function() {
+			alert("Неправильно")
+			miss=miss+1
+		}
+		samomu.onclick = function() {
+			alert("Неправильно")
+			miss=miss+1
+		}
+		priveti.onclick = function() {
+			document.querySelector(".third").style.opacity = 0
+			document.querySelector(".questions_3").style.opacity = 0
+			if(miss==0){
+				alert("Вы прошли тест на отлично без единой ошибки!")
+			}
+			if(miss==1){
+				alert("Вы прошли тест, но с одной ошибкой, вам надо еще немного запомнить кое-что")
+			}
+			if(miss>1){
+				alert("Вы не готовы для борьбы с коронавирусом!")
+			}
+			let hreffade = function() {
+				main.style.opacity = 0
+			}
+			let hrefao = function() {
+				location.href = "allabout.html"
+			}
+			setTimeout(hreffade, 0)
+			setTimeout(hrefao, 500)
+		}
+		eda.onclick = function() {
+			alert("Неправильно!")
+			miss=miss+1
+		}
+		vihod.onclick = function() {
+			alert("Неправильно!")
+			miss=miss+1
+		}
+	</script>
+</body></html>
